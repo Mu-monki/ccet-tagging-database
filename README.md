@@ -7,7 +7,7 @@ It utilizes a **Star Schema** dimensional model to efficiently store over 146,00
 ## 📋 Prerequisites
 
 Before running the setup, ensure you have the following installed on your machine:
-* **Docker & Docker Compose** (Docker Desktop is recommended)
+* **Docker & Docker Compose** *(Docker Desktop is recommended)*
 * **Python 3.8+**
 * Required Python Libraries:
   ```bash
@@ -38,11 +38,8 @@ The database (ccet_db) is modeled to separate repetitive text data from numerica
     fact_ccet_expenditure: The central repository storing discrete budgetary rows, mapped via Foreign Keys to Agencies, PAPs, and Typologies. Includes amounts for adaptation, mitigation, and total expenditures.
 
     dim_department: Distinct governmental departments.
-
     dim_agency: Sub-agencies and their associated grit_tagging classifications.
-
     dim_pap: Programs, Activities, and Projects (PAPs) with their full text descriptions.
-
     dim_typology: CCET initiative classifications and descriptions.
 
 Note: To ensure 100% data integrity and avoid database-level string collation conflicts (e.g., invisible trailing spaces or byte-decoding traps), all deduplication and primary key ID generation is handled strictly within the Python application layer before insertion.
@@ -51,7 +48,7 @@ Note: To ensure 100% data integrity and avoid database-level string collation co
 ![Entity Relationship Diagram](/images/erd.png "Entity Relationship Diagram")
 
 ## 🚀 Installation and Setup
-Step 1: Start the Database Environment
+**Step 1:** Start the Database Environment
 
 Spin up the local MySQL instance using Docker. Run this command in your terminal from the project folder:
 Bash
@@ -59,7 +56,7 @@ Bash
 ```docker compose up -d```
 
 (Wait 10-15 seconds for the database container to fully initialize).
-Step 2: Initialize the Database Schema
+**Step 2:** Initialize the Database Schema
 
 Apply the schema to create the empty tables and enforce relationships.
 
@@ -73,7 +70,7 @@ DOS
 
 ```cmd.exe /c "type schema.sql | docker exec -i ccet_mysql mysql -uroot -prootpassword ccet_db"```
 
-Step 3: Run the ETL Pipeline
+**Step 3:** Run the ETL Pipeline
 
 Execute the Python script to clean the CSVs, map the relational IDs, and batch-insert the data into MySQL.
 Bash
