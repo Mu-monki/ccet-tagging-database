@@ -44,7 +44,7 @@ The database (ccet_db) is modeled to separate repetitive text data from numerica
 
 Note: To ensure 100% data integrity and avoid database-level string collation conflicts (e.g., invisible trailing spaces or byte-decoding traps), all deduplication and primary key ID generation is handled strictly within the Python application layer before insertion.
 
-## Entity Relationship Diagram
+## 💾 Entity Relationship Diagram
 ![Entity Relationship Diagram](/images/erd-bg.png "Entity Relationship Diagram")
 
 ## 🚀 Installation and Setup
