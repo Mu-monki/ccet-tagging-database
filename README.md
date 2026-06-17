@@ -52,6 +52,7 @@ Note: To ensure 100% data integrity and avoid database-level string collation co
 
 ### One-Script Installation (Method 1)
 **Step 1:** Run the one-time setup script
+
 *For Linux/MacOS*
 ```
 chmod +x setup.sh                                                         
