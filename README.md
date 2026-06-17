@@ -7,8 +7,8 @@ It utilizes a **Star Schema** dimensional model to efficiently store over 146,00
 ## 📋 Prerequisites
 
 Before running the setup, ensure you have the following installed on your machine:
-* **Docker & Docker Compose** *(Docker Desktop is recommended)*
-* **Python 3.8+**
+* **Docker & Docker Compose** *(Docker Desktop is recommended)* [Install here](https://www.docker.com/products/docker-desktop/)
+* **Python 3.8+** [Install here](https://www.python.org/downloads/release/python-380/)
 * Required Python Libraries:
   ```bash
   pip install pandas sqlalchemy pymysql openpyxl
