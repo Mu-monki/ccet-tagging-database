@@ -84,11 +84,13 @@ Bash
 Once the migration is complete, you can connect to the database using any SQL client (e.g., DBeaver, MySQL Workbench, DataGrip) with the following credentials:
 
 *THIS ARE SAMPLE CREDENTIALS*
+```
     Host: localhost
     Port: 3306
     Database: ccet_db
     Username: root
     Password: rootpassword
+```
 
 ## 🛠️ Data Cleaning Rules Applied
 
