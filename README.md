@@ -83,7 +83,7 @@ Bash
 
 Once the migration is complete, you can connect to the database using any SQL client (e.g., DBeaver, MySQL Workbench, DataGrip) with the following credentials:
 
-*THIS ARE SAMPLE CREDENTIALS*
+*THIS ARE SAMPLE CREDENTIALS.* You may change the credentials on your `.env` file for local/server deployment.
 ```
     Host: localhost
     Port: 3306
