@@ -83,6 +83,8 @@ Bash
 
 Once the migration is complete, you can connect to the database using any SQL client (e.g., DBeaver, MySQL Workbench, DataGrip) with the following credentials:
 
+* -- THIS ARE SAMPLE CREDENTIALS -- *
+
     Host: localhost
     Port: 3306
     Database: ccet_db
@@ -93,13 +95,10 @@ Once the migration is complete, you can connect to the database using any SQL cl
 
 The migrate_data.py script automatically performs the following data sanitization steps:
 
-    NaN Handling: Fills missing textual values with "Unknown" or "N/A" and missing numerical values with 0.
-
-    String Stripping: Removes accidental leading/trailing whitespaces from the Excel exports.
-
-    Truncation: Limits dimension names (Departments, Agencies, Codes) to 255 characters to comply with MySQL indexing limits, while leaving large description fields unbounded (TEXT).
-
-    Referential Integrity: Generates localized IDs simultaneously for dimension tables and fact tables, ensuring zero orphaned rows during the final insertion block.
+    **NaN Handling:** Fills missing textual values with "Unknown" or "N/A" and missing numerical values with 0.
+    **String Stripping:** Removes accidental leading/trailing whitespaces from the Excel exports.
+    **Truncation:** Limits dimension names (Departments, Agencies, Codes) to 255 characters to comply with MySQL indexing limits, while leaving large description fields unbounded (TEXT).
+    **Referential Integrity:** Generates localized IDs simultaneously for dimension tables and fact tables, ensuring zero orphaned rows during the final insertion block.
 
 ## ⚠️ Troubleshooting
 
