@@ -1,9 +1,23 @@
 import pandas as pd
 from sqlalchemy import create_engine
 import sys
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Build the connection string securely from environment variables
+db_user = os.getenv("MYSQL_DB_USER")
+db_password = os.getenv("MYSQL_DB_PASSWORD")
+db_host = os.getenv("MYSQL_DB_HOST")
+db_port = os.getenv("MYSQL_DB_PORT")
+db_name = os.getenv("MYSQL_DB_NAME")
+
+connection_string = f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
 
 # 1. Connect to Database
-engine = create_engine('mysql+pymysql://root:rootpassword@localhost:3306/ccet_db')
+engine = create_engine(connection_string)
 
 print("Reading CSVs...")
 df1 = pd.read_csv("./datasets/data-original.csv", dtype={'PAP ID': str, 'TYPOLOGY ID': str})
