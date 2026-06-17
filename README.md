@@ -1,6 +1,6 @@
 # National CCET PAPs Database Pipeline
 
-This project automates the extraction, transformation, and loading (ETL) of the National Climate Change Expenditure Tagging (CCET) data into a fully normalized MySQL database. 
+This project automates the extraction, transformation, and loading (ETL) of the **National Climate Change Expenditure Tagging (CCET)** data into a fully normalized *MySQL database*. 
 
 It utilizes a **Star Schema** dimensional model to efficiently store over 146,000+ records, reducing data redundancy and optimizing analytical query performance. The infrastructure is containerized using Docker, and the ETL process is handled via a robust Python/Pandas pipeline.
 
@@ -48,14 +48,31 @@ Note: To ensure 100% data integrity and avoid database-level string collation co
 ![Entity Relationship Diagram](/images/erd-bg.png "Entity Relationship Diagram")
 
 ## 🚀 Installation and Setup
+**Please ensure you have the prerequisite software installed.**
+
+### One-Script Installation (Method 1)
+**Step 1:** Run the one-time setup script
+*For Linux/MacOS*
+```
+chmod +x setup.sh                                                         
+./setup.sh
+```
+
+*For Widows*
+```
+.\setup.ps1
+```
+### Alternative Installation (Method 2)
 **Step 1:** Start the Database Environment
 
 Spin up the local MySQL instance using Docker. Run this command in your terminal from the project folder:
 Bash
 
-```docker compose up -d```
+```
+docker compose up -d
+```
+*(Wait 10-15 seconds for the database container to fully initialize).*
 
-(Wait 10-15 seconds for the database container to fully initialize).
 **Step 2:** Initialize the Database Schema
 
 Apply the schema to create the empty tables and enforce relationships.
