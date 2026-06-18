@@ -47,7 +47,7 @@ Note: To ensure 100% data integrity and avoid database-level string collation co
 ## 4. Entity Relationship Diagram
 ![Entity Relationship Diagram](/images/erd-bg.png "Entity Relationship Diagram")
 
-## 🚀 Installation and Setup
+## 5. Installation and Setup
 **Please ensure you have the prerequisite software installed.**
 
 ### One-Script Installation (Method 1)
@@ -97,7 +97,7 @@ Bash
 
 (Alternatively, you can just run ./setup.sh on Mac/Linux or .\setup.ps1 on Windows to execute all three steps automatically).
 
-## 5. Connecting to the Database
+## 6. Connecting to the Database
 
 Once the migration is complete, you can connect to the database using any SQL client (e.g., DBeaver, MySQL Workbench, DataGrip) with the following credentials:
 
@@ -110,7 +110,7 @@ Once the migration is complete, you can connect to the database using any SQL cl
     Password: rootpassword
 ```
 
-## 6. Data Cleaning Rules Applied
+## 7. Data Cleaning Rules Applied
 
 The `migration.py` script automatically performs the following data sanitization steps:
 
@@ -119,7 +119,7 @@ The `migration.py` script automatically performs the following data sanitization
     - Truncation: Limits dimension names (Departments, Agencies, Codes) to 255 characters to comply with MySQL indexing limits, while leaving large description fields unbounded (TEXT).
     - Referential Integrity: Generates localized IDs simultaneously for dimension tables and fact tables, ensuring zero orphaned rows during the final insertion block.
 
-## 7. Troubleshooting
+## 8. Troubleshooting
 
     "Database already contains data" Error: The Python script includes a safety lock to prevent data duplication. If you need to re-run the script, you must wipe the database by repeating Step 2 (Initialize the Database Schema) first.
 
