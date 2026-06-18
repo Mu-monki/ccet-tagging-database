@@ -10,7 +10,7 @@ load_dotenv()
 # Build the connection string securely from environment variables
 db_user = os.getenv("MYSQL_DB_USER")
 db_password = os.getenv("MYSQL_DB_PASSWORD")
-db_host = os.getenv("MYSQL_DB_HOST")
+db_host = "localhost"
 db_port = os.getenv("MYSQL_DB_PORT")
 db_name = os.getenv("MYSQL_DB_NAME")
 
